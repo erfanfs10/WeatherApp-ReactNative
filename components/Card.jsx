@@ -9,7 +9,7 @@ export default Card;
 
 const styles = StyleSheet.create({
   container: {
-    height: 350,
+    height: 380,
     borderWidth: 2,
     borderColor: "#a1a1aa",
     borderRadius: 10,
