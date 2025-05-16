@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import ThemedView from "../components/ThemedView";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
@@ -11,6 +12,7 @@ const RootLayout = () => {
       <ThemedView style={styles.container}>
         <Header />
         <Slot />
+        <Footer/>
       </ThemedView>
     </>
   );
