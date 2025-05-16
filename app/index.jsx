@@ -1,14 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet } from "react-native";
+import ThemedView from "../components/ThemedView";
+import ThemedText from "../components/ThemedText";
 
-const index = () => {
+const Home = () => {
   return (
-    <View>
-      <Text>index</Text>
-    </View>
-  )
-}
+    <ThemedView style={styles.container}>
+      <ThemedText style={styles.title}>salam</ThemedText>
+    </ThemedView>
+  );
+};
 
-export default index
+export default Home;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+});
