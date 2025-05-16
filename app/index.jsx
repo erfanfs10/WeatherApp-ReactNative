@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CardItem from "../components/CardItem";
 import Card from "../components/Card";
+import Tab from "../components/Tab";
 import Temprature from "../assets/temprature.png";
 import Weather from "../assets/weather.png";
 import Wind from "../assets/wind.png";
@@ -38,29 +39,32 @@ const Home = () => {
   }, []);
 
   return (
-    <Card>
-      <CardItem
-        title="Temprature"
-        Imagesource={Temprature}
-        data={`${data?.current?.temp_c} C`}
-      />
-      <CardItem
-        title="Condition"
-        Imagesource={Weather}
-        data={data?.current?.condition?.text}
-      />
-      <CardItem
-        title="Wind Speed"
-        Imagesource={Wind}
-        data={`${data?.current?.wind_kph} kph`}
-      />
-      <CardItem
-        title="Humidity"
-        Imagesource={Humidity}
-        data={`${data?.current?.humidity} %`}
-      />
-      <CardItem title="UV" Imagesource={UV} data={data?.current?.uv} />
-    </Card>
+    <>
+      <Tab city={city} setCity={setCity}/>
+      <Card>
+        <CardItem
+          title="Temprature"
+          Imagesource={Temprature}
+          data={`${data?.current?.temp_c} C`}
+        />
+        <CardItem
+          title="Condition"
+          Imagesource={Weather}
+          data={data?.current?.condition?.text}
+        />
+        <CardItem
+          title="Wind Speed"
+          Imagesource={Wind}
+          data={`${data?.current?.wind_kph} kph`}
+        />
+        <CardItem
+          title="Humidity"
+          Imagesource={Humidity}
+          data={`${data?.current?.humidity} %`}
+        />
+        <CardItem title="UV" Imagesource={UV} data={data?.current?.uv} />
+      </Card>
+    </>
   );
 };
 
