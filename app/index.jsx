@@ -6,6 +6,7 @@ import Temprature from "../assets/temprature.png";
 import Weather from "../assets/weather.png";
 import Wind from "../assets/wind.png";
 import Humidity from "../assets/humidity.png";
+import Date from "../assets/date.png";
 import UV from "../assets/uv.png";
 
 const Home = () => {
@@ -42,6 +43,11 @@ const Home = () => {
     <>
       <Tab city={city} setCity={setCity}/>
       <Card>
+        <CardItem
+          title="Date"
+          Imagesource={Date}
+          data={`${data?.location?.localtime}`}
+        />
         <CardItem
           title="Temprature"
           Imagesource={Temprature}
