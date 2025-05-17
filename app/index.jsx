@@ -14,6 +14,7 @@ const Home = () => {
   const [data, setData] = useState(null);
 
   const getData = async () => {
+    
     try {
       const response = await fetch(
         `https://api.weatherapi.com/v1/current.json?key=257534eebe09413598b105642251605&q=${city}&aqi=no`
@@ -41,17 +42,18 @@ const Home = () => {
 
   return (
     <>
-      <Tab city={city} setCity={setCity}/>
+      <Tab city={city} setCity={setCity} setData={setData}/>
       <Card>
         <CardItem
           title="Date"
           Imagesource={Date}
-          data={`${data?.location?.localtime}`}
+          data={data?.location?.localtime}
         />
         <CardItem
           title="Temprature"
           Imagesource={Temprature}
-          data={`${data?.current?.temp_c} C`}
+          data={data?.current?.temp_c}
+          suffix="C"
         />
         <CardItem
           title="Condition"
@@ -61,12 +63,14 @@ const Home = () => {
         <CardItem
           title="Wind Speed"
           Imagesource={Wind}
-          data={`${data?.current?.wind_kph} kph`}
+          data={data?.current?.wind_kph}
+          suffix="kph"
         />
         <CardItem
           title="Humidity"
           Imagesource={Humidity}
-          data={`${data?.current?.humidity} %`}
+          data={data?.current?.humidity}
+          suffix="%"
         />
         <CardItem title="UV" Imagesource={UV} data={data?.current?.uv} />
       </Card>

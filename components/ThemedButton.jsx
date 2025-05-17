@@ -2,7 +2,7 @@ import { StyleSheet, Pressable, useColorScheme } from "react-native";
 import ThemedText from "./ThemedText";
 import { Colors } from "../Colors";
 
-const ThemedButton = ({ title, city, setCity, style, ...props }) => {
+const ThemedButton = ({ title, city, setCity, setData, style, ...props }) => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.dark;
 
@@ -10,6 +10,7 @@ const ThemedButton = ({ title, city, setCity, style, ...props }) => {
     <Pressable
       onPress={() => {
         setCity(title);
+        setData(null);
       }}
       style={({ pressed }) => [
         { backgroundColor: theme.backgroundColor },

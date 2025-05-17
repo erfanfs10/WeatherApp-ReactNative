@@ -2,12 +2,12 @@ import { StyleSheet } from "react-native";
 import ThemedButton from "./ThemedButton";
 import ThemedView from "./ThemedView";
 
-const Tab = ({ city, setCity }) => {
+const Tab = ({ city, setCity, setData}) => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedButton title="Tehran" city={city} setCity={setCity}/>
-      <ThemedButton title="London" city={city} setCity={setCity}/>
-      <ThemedButton title="Ottawa" city={city} setCity={setCity}/>
+      <ThemedButton title="Tehran" city={city} setCity={setCity} setData={setData}/>
+      <ThemedButton title="London" city={city} setCity={setCity} setData={setData}/>
+      <ThemedButton title="Ottawa" city={city} setCity={setCity} setData={setData}/>
     </ThemedView>
   );
 };
