@@ -14,7 +14,6 @@ const Home = () => {
   const [data, setData] = useState(null);
 
   const getData = async () => {
-    
     try {
       const response = await fetch(
         `https://api.weatherapi.com/v1/current.json?key=257534eebe09413598b105642251605&q=${city}&aqi=no`
@@ -42,7 +41,7 @@ const Home = () => {
 
   return (
     <>
-      <Tab city={city} setCity={setCity} setData={setData}/>
+      <Tab city={city} setCity={setCity} setData={setData} />
       <Card>
         <CardItem
           title="Date"
@@ -72,7 +71,11 @@ const Home = () => {
           data={data?.current?.humidity}
           suffix="%"
         />
-        <CardItem title="UV" Imagesource={UV} data={data?.current?.uv} />
+        <CardItem
+          title="UV"
+          Imagesource={UV}
+          data={data?.current?.uv === 0 ? "0" : data?.current?.uv}
+        />
       </Card>
     </>
   );
